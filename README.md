@@ -1,61 +1,57 @@
-# football_valuation_project
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+# ⚽ Football Player Valuation Predictor
 
-A short description of the project.
+## 📌 Project Overview
+This project is an end-to-end Machine Learning pipeline designed to predict the fair market value of football players based on their attributes (Age, Overall Rating, Potential, and Playing Positions). Built with Python and scikit-learn, the project culminates in a user-friendly interactive web application using Streamlit.
 
-## Project Organization
+## 🚀 Features
+* **Automated Environment Setup:** Custom PowerShell scripting (`New-AIProject`) utilizing `uv` for lightning-fast project initialization and Git configuration.
+* **Advanced Data Preprocessing:** Cleaned FIFA dataset, handling missing values, and implementing **Multi-Hot Encoding** for complex player positions (e.g., players who can play ST, RW, and CAM simultaneously).
+* **Machine Learning:** Transitioned from a baseline Linear Regression model to a robust **Random Forest Regressor** to capture the non-linear dynamics of the football transfer market.
+* **Out-of-Time Validation:** Successfully tested the model on real-world future transfers (e.g., Antony's 2022 transfer) and non-existent dataset wonders (e.g., Lamine Yamal), proving the model's high accuracy and understanding of market inflation.
+* **Interactive Web UI:** A complete Streamlit dashboard for real-time predictions.
+
+## 📊 Model Performance
+* **Algorithm:** Random Forest Regressor
+* **R-Squared ($R^2$):** 96.80%
+* **Mean Absolute Error (MAE):** ~136,000 EUR (Highly accurate for predicting millions in market value).
+
+## 🛠️ Tech Stack
+* **Language:** Python 3.11
+* **Data Manipulation:** pandas, numpy
+* **Machine Learning:** scikit-learn
+* **Web Framework:** Streamlit
+* **Package Management:** uv
+
+## 💻 How to Run Locally
+
+1. **Clone the repository:**
+```bash
+   git clone [https://github.com/YOUR_USERNAME/football_valuation_project.git](https://github.com/YOUR_USERNAME/football_valuation_project.git)
+   cd football_valuation_project
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         football_valuation_project and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── football_valuation_project   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes football_valuation_project a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+
+2. **Install dependencies:**
+
+```bash
+   uv pip install -r requirements.txt
+
 ```
 
---------
+3. **Run the Streamlit Web App:**
+
+```bash
+   streamlit run app.py
+
+```
+
+## 🧠 Key Learnings
+
+* Tree-based models (Random Forest) do not require feature scaling, unlike distance-based models (Linear Regression).
+* Structuring projects using clean code snippets drastically improves development speed and code reusability.
+
+```
+
+---
 
